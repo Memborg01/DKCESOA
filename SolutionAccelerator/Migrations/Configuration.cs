@@ -1,3 +1,5 @@
+using Models;
+
 namespace SolutionAccelerator.Migrations
 {
     using Data_Access_Layer;
