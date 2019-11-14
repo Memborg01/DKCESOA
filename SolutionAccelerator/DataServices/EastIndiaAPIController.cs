@@ -1,41 +1,46 @@
-﻿using SolutionAccelerator.Models.DataTypes;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Newtonsoft.Json;
+using SolutionAccelerator.Models.DataTypes;
 
-public class EastIndiaTestController : ApiController
+namespace SolutionAccelerator.DataServices
 {
-    private static readonly HttpClient client = new HttpClient();
-
-    //api/telstartest
-    //public List<RouteAPIModel> Get()
-    //{
-    //    var task = GetTask();
-    //    var result = task.Result;
-    //    //var list = JsonConvert.DeserializeObject<List<RouteAPIModel>>(result);
-
-    //    return list;
-    //}
-
-    private async Task<string> GetTask()
+    public class EastIndiaAPIController : ApiController
     {
-        var endPoint = "http://wa-eitdk.azurewebsites.net/api/routeplan";
+        private static readonly HttpClient client = new HttpClient();
 
-        var values = new Dictionary<string, string>
+        public List<RouteAPIModel> Get()
         {
-            ["date"] = "2",
+            var task = GetTask();
+            var result = task.Result;
+            var list = JsonConvert.DeserializeObject<List<RouteAPIModel>>(result);
 
-        };
+            return list;
+        }
 
-        var content = new FormUrlEncodedContent(values);
+        private async Task<string> GetTask()
+        {
+            var endPoint = "http://wa-eitdk.azurewebsites.net/api/routeplan";
 
-        var response = await client.PostAsync(endPoint, content);
+            var values = new Dictionary<string, string>
+            {
+                ["date"] = "2",
 
-        var responseString = await response.Content.ReadAsStringAsync();
+            };
 
-        return responseString;
+            var content = new FormUrlEncodedContent(values);
+
+            var response = await client.PostAsync(endPoint, content);
+
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            return responseString;
+        }
+
     }
-
-
 }
