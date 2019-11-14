@@ -162,6 +162,11 @@
     <Compile Include="Migrations\201911141710261_TransactionUpdate.Designer.cs">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911141828026_PacketModel.cs" />
+    <Compile Include="Migrations\201911141828026_PacketModel.Designer.cs">
+      <DependentUpon>201911141828026_PacketModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Packet.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.Designer.cs">
@@ -281,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141710261_TransactionUpdate.resx">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141828026_PacketModel.resx">
+      <DependentUpon>201911141828026_PacketModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

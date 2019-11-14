@@ -27,6 +27,8 @@ namespace Data_Access_Layer
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<Course> Cources { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
+        public virtual DbSet<Packet> Packets { get; set; }
+
 
 
         public DbSet<Airport> Airports { get; set; }
