@@ -137,6 +137,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
     <Compile Include="Data Access Layer\SolutionAcceleratorContext.cs" />
     <Compile Include="DataServices\CourseService.svc.cs">
       <DependentUpon>CourseService.svc</DependentUpon>
@@ -149,6 +150,19 @@
     <Compile Include="Migrations\201907260643294_InitialCreate.Designer.cs">
       <DependentUpon>201907260643294_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911141625444_Transactions.cs" />
+    <Compile Include="Migrations\201911141625444_Transactions.Designer.cs">
+      <DependentUpon>201911141625444_Transactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911141646376_Transactions1.cs" />
+    <Compile Include="Migrations\201911141646376_Transactions1.Designer.cs">
+      <DependentUpon>201911141646376_Transactions1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911141710261_TransactionUpdate.cs" />
+    <Compile Include="Migrations\201911141710261_TransactionUpdate.Designer.cs">
+      <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.Designer.cs">
       <DependentUpon>201911141630553_AirportModel.cs</DependentUpon>
@@ -250,13 +264,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Transactions\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907260643294_InitialCreate.resx">
       <DependentUpon>201907260643294_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141625444_Transactions.resx">
+      <DependentUpon>201911141625444_Transactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141646376_Transactions1.resx">
+      <DependentUpon>201911141646376_Transactions1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141630553_AirportModel.resx">
       <DependentUpon>201911141630553_AirportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141710261_TransactionUpdate.resx">
+      <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
