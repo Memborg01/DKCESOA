@@ -2,7 +2,6 @@ using Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-
 namespace Data_Access_Layer
 {
 
@@ -27,6 +26,8 @@ namespace Data_Access_Layer
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<Course> Cources { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
