@@ -28,6 +28,8 @@ namespace Data_Access_Layer
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<Course> Cources { get; set; }
 
+        public DbSet<Airport> Airports { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
