@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using Data_Access_Layer;
 using Models;
+using SolutionAccelerator.Models.DataTypes;
 
 namespace SolutionAccelerator.DataServices
 {
@@ -18,16 +19,27 @@ namespace SolutionAccelerator.DataServices
         {
             using (SolutionAcceleratorContext context = new SolutionAcceleratorContext())
             {
-                if (weight <= 20 && length <= 200)
+
+                /*
+                 * IF within limitations
+                 *      IF Destination Availability != false
+                 *          return RouteList
+                 * 
+                 */
+                if (weight <= 200)
                 {
-                    return context.Routes.ToList();
+                    var routeList = context.Routes.Where(r => r.DestinationA.Availability != false && r.DestinationB.Availability != false).ToList();
+                    if (weight < 1)
+                    {
+                        foreach (var route in routeList)
+                        {
+                            route.PacketPrice = new PacketPrices().OneKg;
+                        }
+                    }
                 }
-                else
-                {
-                    return null;
-                }
-                   
-            
+                
+
+                return null;
             }
         }
     }

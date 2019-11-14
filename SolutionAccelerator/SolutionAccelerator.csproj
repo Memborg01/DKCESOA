@@ -66,8 +66,12 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <!--<Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>-->
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -126,11 +130,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -142,14 +141,19 @@
     <Compile Include="DataServices\CourseService.svc.cs">
       <DependentUpon>CourseService.svc</DependentUpon>
     </Compile>
+    <Compile Include="DataServices\EastIndiaAPIController.cs" />
     <Compile Include="DataServices\ICourseService.cs" />
     <Compile Include="DataServices\IRouteService.cs" />
+    <Compile Include="DataServices\RouteAPIController.cs" />
     <Compile Include="DataServices\RouteService.svc.cs">
       <DependentUpon>RouteService.svc</DependentUpon>
     </Compile>
+    <Compile Include="DataServices\TelstarAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HttpRequestHelper.cs" />
+    <Compile Include="Helpers\PriceHelper.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.Designer.cs">
       <DependentUpon>201907260643294_InitialCreate.cs</DependentUpon>
@@ -166,6 +170,16 @@
     <Compile Include="Migrations\201911141710261_TransactionUpdate.Designer.cs">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\APIModel.cs" />
+    <Compile Include="Models\APIResponse.cs" />
+    <Compile Include="Models\RouteTypeEnum.cs" />
+    <Compile Include="Models\TransportationModeEnum.cs" />
+    <Compile Include="Models\Path.cs" />
+    <Compile Include="Migrations\201911141828026_PacketModel.cs" />
+    <Compile Include="Migrations\201911141828026_PacketModel.Designer.cs">
+      <DependentUpon>201911141828026_PacketModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Packet.cs" />
     <Compile Include="Migrations\201911141847341_RoutesPackages.cs" />
     <Compile Include="Migrations\201911141847341_RoutesPackages.Designer.cs">
       <DependentUpon>201911141847341_RoutesPackages.cs</DependentUpon>
@@ -178,6 +192,13 @@
     <Compile Include="Migrations\201911141854155_RoutesPackages2.Designer.cs">
       <DependentUpon>201911141854155_RoutesPackages2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911142215240_APIDbChanges.cs" />
+    <Compile Include="Migrations\201911142215240_APIDbChanges.Designer.cs">
+      <DependentUpon>201911142215240_APIDbChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataTypes\PacketModel.cs" />
+    <Compile Include="Models\DataTypes\PacketPrices.cs" />
+    <Compile Include="Models\DataTypes\RouteAPIModel.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.Designer.cs">
@@ -299,6 +320,9 @@
     <EmbeddedResource Include="Migrations\201911141710261_TransactionUpdate.resx">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141828026_PacketModel.resx">
+      <DependentUpon>201911141828026_PacketModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141847341_RoutesPackages.resx">
       <DependentUpon>201911141847341_RoutesPackages.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141854155_RoutesPackages2.resx">
       <DependentUpon>201911141854155_RoutesPackages2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911142215240_APIDbChanges.resx">
+      <DependentUpon>201911142215240_APIDbChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
