@@ -146,6 +146,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HttpRequestHelper.cs" />
+    <Compile Include="Helpers\PriceHelper.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.Designer.cs">
       <DependentUpon>201907260643294_InitialCreate.cs</DependentUpon>
@@ -162,6 +164,11 @@
     <Compile Include="Migrations\201911141710261_TransactionUpdate.Designer.cs">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\APIModel.cs" />
+    <Compile Include="Models\APIResponse.cs" />
+    <Compile Include="Models\RouteTypeEnum.cs" />
+    <Compile Include="Models\TransportationModeEnum.cs" />
+    <Compile Include="Models\Path.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.Designer.cs">
