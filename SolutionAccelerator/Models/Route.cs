@@ -13,7 +13,7 @@ namespace Models
         public int RouteID { get; set; }
         public Airport DestinationA { get; set; }
         public Airport DestinationB { get; set; }
-        public int Time { get; set; }
+        public DateTime Time { get; set; }
         public PacketPrice PacketPrice { get; set; }
         
     }
