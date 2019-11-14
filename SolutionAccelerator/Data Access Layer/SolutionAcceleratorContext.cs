@@ -26,10 +26,12 @@ namespace Data_Access_Layer
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<Course> Cources { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
 
-
+        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Airport> Airports { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<PacketPrice> PacketPrices { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

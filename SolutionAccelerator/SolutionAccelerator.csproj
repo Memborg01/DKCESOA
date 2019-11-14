@@ -135,6 +135,10 @@
       <DependentUpon>CourseService.svc</DependentUpon>
     </Compile>
     <Compile Include="DataServices\ICourseService.cs" />
+    <Compile Include="DataServices\IRouteService.cs" />
+    <Compile Include="DataServices\RouteService.svc.cs">
+      <DependentUpon>RouteService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +165,19 @@
     <Compile Include="Models\RouteTypeEnum.cs" />
     <Compile Include="Models\TransportationModeEnum.cs" />
     <Compile Include="Models\Path.cs" />
+    <Compile Include="Migrations\201911141847341_RoutesPackages.cs" />
+    <Compile Include="Migrations\201911141847341_RoutesPackages.Designer.cs">
+      <DependentUpon>201911141847341_RoutesPackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911141851262_RoutesPackages1.cs" />
+    <Compile Include="Migrations\201911141851262_RoutesPackages1.Designer.cs">
+      <DependentUpon>201911141851262_RoutesPackages1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911141854155_RoutesPackages2.cs" />
+    <Compile Include="Migrations\201911141854155_RoutesPackages2.Designer.cs">
+      <DependentUpon>201911141854155_RoutesPackages2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataTypes\PacketPrices.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.cs" />
     <Compile Include="Migrations\201911141630553_AirportModel.Designer.cs">
@@ -172,7 +189,7 @@
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\PackagePrice.cs" />
     <Compile Include="Models\Price.cs" />
-    <Compile Include="Models\Routes.cs" />
+    <Compile Include="Models\Route.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Weight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +200,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DataServices\CourseService.svc" />
+    <Content Include="DataServices\RouteService.svc" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -280,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141710261_TransactionUpdate.resx">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141847341_RoutesPackages.resx">
+      <DependentUpon>201911141847341_RoutesPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141851262_RoutesPackages1.resx">
+      <DependentUpon>201911141851262_RoutesPackages1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911141854155_RoutesPackages2.resx">
+      <DependentUpon>201911141854155_RoutesPackages2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
