@@ -29,6 +29,8 @@ namespace Data_Access_Layer
         public virtual DbSet<Transaction> Transactions { get; set; }
 
 
+        public DbSet<Airport> Airports { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
