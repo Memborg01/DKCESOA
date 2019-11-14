@@ -8,8 +8,6 @@ namespace Models
 {
     public class Price
     {
-
-        public int PriceID { get; set; }
         public string Currency { get; set; }
         public float Amount { get; set; }
     }
