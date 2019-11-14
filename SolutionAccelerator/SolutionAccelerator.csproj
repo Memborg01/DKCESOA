@@ -65,6 +65,10 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <!--<Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>-->
@@ -126,11 +130,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -153,6 +152,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HttpRequestHelper.cs" />
+    <Compile Include="Helpers\PriceHelper.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.cs" />
     <Compile Include="Migrations\201907260643294_InitialCreate.Designer.cs">
       <DependentUpon>201907260643294_InitialCreate.cs</DependentUpon>
@@ -169,6 +170,11 @@
     <Compile Include="Migrations\201911141710261_TransactionUpdate.Designer.cs">
       <DependentUpon>201911141710261_TransactionUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\APIModel.cs" />
+    <Compile Include="Models\APIResponse.cs" />
+    <Compile Include="Models\RouteTypeEnum.cs" />
+    <Compile Include="Models\TransportationModeEnum.cs" />
+    <Compile Include="Models\Path.cs" />
     <Compile Include="Migrations\201911141828026_PacketModel.cs" />
     <Compile Include="Migrations\201911141828026_PacketModel.Designer.cs">
       <DependentUpon>201911141828026_PacketModel.cs</DependentUpon>
