@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Models
 {
-    public class Routes
+    public class Route
     {
 
         public int RouteID { get; set; }
