@@ -2,93 +2,103 @@
     ViewBag.Title = "Route Calculator";
 }
 
-<h1>Welcome to Oceanic Airlines' Route Calculator</h1>
+<div class="map-image" style="position:absolute; right:5px; top:5px">
+    <img src="~/Resources/images/map.jpg" class="img-responsive" style="height: 90vh; margin-top: 0px; margin-left:10px; margin-right:5px" />
+</div>
+
+<div style="max-width:60vw">
+    <h2>Welcome to Oceanic Airlines' Route Calculator</h2>
+</div>
 <br />
-<div class="jumbotron">
-    <div class="row">
-        <div class="col-md-4">
-            Choose Pickup:
-            <select name="airport">
-                <option value="">Select city</option>
-                <option value="1">Ankara</option>
-                <option value="2">Addis Abeba</option>
-                <option value="3">Darfur</option>
-            </select>
-            <br />
-        </div>
 
-        <div class="col-md-4">
-            Choose Destination:
-            <select name="airport">
-                <option value="">Select city</option>
-                <option value="1">Ankara</option>
-                <option value="2">Addis Abeba</option>
-                <option value="3">Darfur</option>
-            </select>
-            <br />
-        </div>
 
-        <div class="col-md-4">
-            <a class="btn btn-default" href="https://www.google.com/search?q=calculator&rlz=1C1GCEU_daDK843DK843&oq=calculator&aqs=chrome..69i57j0l5j69i61j69i60.3638j0j4&sourceid=chrome&ie=UTF-8">Calculate Route</a>
-        </div>
+<div class="row">
+    <div class="col-md-4">
+
+        Choose Pickup:
+        <select name="airport">
+            <option value="">Select city</option>
+            <option value="1">Ankara</option>
+            <option value="2">Addis Abeba</option>
+            <option value="3">Darfur</option>
+        </select>
+        <br />
+        <br />
+
+        Choose Destination:
+        <select name="airport">
+            <option value="">Select city</option>
+            <option value="1">Ankara</option>
+            <option value="2">Addis Abeba</option>
+            <option value="3">Darfur</option>
+        </select>
+        <br />
+        <br />
+
+        Choose Package type:
+        <select name="packageType">
+            <option value="">Package type</option>
+            <option value="1">Standard</option>
+            <option value="2">Weapons</option>
+            <option value="3">Live Animals</option>
+            <option value="4">Fragile</option>
+            <option value="5">Frozen</option>
+            <option value="6">Recommended</option>
+        </select>
+        <br />
+        <br />
+
+    </div>
+
+    <div class="col-md-4">
+        <a class="btn btn-default" style="position:absolute; right:100px"
+           href="https://www.google.com/search?q=calculator&rlz=1C1GCEU_daDK843DK843&oq=calculator&aqs=chrome..69i57j0l5j69i61j69i60.3638j0j4&sourceid=chrome&ie=UTF-8">
+            Calculate Route
+        </a>
+    </div>
+
+
+    <br />
+</div>
+
+<div class="row" style="margin-right:20px">
+    <div class="col-md-4">
+        Set Weight:
+        <form method="post">
+            <input type="text" name="weight" value="" /> kg
+            @*<input type="submit" value="Select" >*@
+        </form>
         <br />
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            Set Weight:
-            <form method="post">
-                <input type="text" name="weight" value="" /> kg
-                @*<input type="submit" value="Select" >*@
-            </form>
-            <br />
-        </div>
-
-        <div class="col-md-4">
-            Choose Package type:
-            <select name="packageType">
-                <option value="">Package type</option>
-                <option value="1">Standard</option>
-                <option value="2">Weapons</option>
-                <option value="3">Live Animals</option>
-                <option value="4">Fragile</option>
-                <option value="5">Frozen</option>
-                <option value="6">Recommended</option>
-            </select>
-            <br />
-        </div>
+    <div class="col-md-4" style="margin-right:20px">
+        Set Height:
+        <form method="post">
+            <input type="text" id="height" name="height" value="" /> cm
+        </form>
+        <br />
     </div>
 
-    <div class="row">
+    <div class="col-md-4">
+        Set Width:
+        <form method="post">
+            <input type="text" id="width" name="width" value="" /> cm
+        </form>
+        <br />
+    </div>
 
-        <div class="col-md-4">
-            Set Height:
-            <form method="post">
-                <input type="text" id="height" name="height" value="" /> cm
-            </form>
-            <br />
-        </div>
-
-        <div class="col-md-4">
-            Set Width:
-            <form method="post">
-                <input type="text" id="width" name="width" value="" /> cm
-            </form>
-            <br />
-        </div>
-
-        <div class="col-md-4">
-            Set Depth:
-            <form method="post">
-                <input type="text" id="depth" name="depth" value="" /> cm
-            </form>
-            <br />
-        </div>
-
+    <div class="col-md-4">
+        Set Depth:
+        <form method="post">
+            <input type="text" id="depth" name="depth" value="" /> cm
+        </form>
+        <br />
     </div>
 
 </div>
 
+
+
 @*<form method="post">
-    <input type="text" id="EmailAddress" name="EmailAddress" value="" />
-</form>*@
+        <input type="text" id="EmailAddress" name="EmailAddress" value="" />
+    </form>*@
