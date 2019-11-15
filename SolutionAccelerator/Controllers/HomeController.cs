@@ -12,19 +12,25 @@ namespace Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public void OnPost()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var weight = Request.Form["weight"];
+            // do something with weight
         }
+
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "All Bookings";
 
             return View();
         }
+
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
+
+        //    return View();
+        //}
     }
 }
