@@ -8,16 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="max-width:70vw; margin-top:5px; margin-left:5px">
+        <div class="container" >
             <div class="row">
 
                 <div class="col-md-4">
                     <div class="navbar-collapse collapse">
-                        <img src="DKCESOA/SolutionAccelerator/Resources/images/Oceanic.svg" class="img-responsive" style="height: 100px; margin-top: 5px; margin-bottom:5px" />
+                        <img src="~/Resources/images/Oceanic.svg" class="img-responsive" style="height: 100px; margin-top: 10px; margin-bottom:10px; margin-left: 40px" />
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" >
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Route Calculator", "", "", new { area = "" }, new { @class = "navbar-brand" })</li>
                         @*<li>@Html.ActionLink("All Bookings", "", "")</li>*@
