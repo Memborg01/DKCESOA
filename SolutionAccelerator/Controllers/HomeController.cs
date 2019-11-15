@@ -1,15 +1,24 @@
-﻿using System;
+﻿using Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Models;
 
 namespace Controllers
 {
     public class HomeController : Controller
     {
+        public List<Airport> Nodes { get; set; }
+
         public ActionResult Index()
         {
+            var helper = new DatabaseHelper();
+            var airports = helper.GetaAirports();
+
+            ViewBag.Airports = airports;
+
             return View();
         }
         public void OnPost()
