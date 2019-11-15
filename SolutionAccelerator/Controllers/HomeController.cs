@@ -35,6 +35,23 @@ namespace Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult ShowRouteOptions(float weight)
+        {
+            if (weight > 0
+                )
+            {
+                //show dialog
+                ViewBag.ShowDialog = true;
+                return View();
+            }
+            else
+            {
+                Console.WriteLine("Weight not specified");
+                return View();
+            }           
+        }
+
         //public ActionResult About()
         //{
         //    ViewBag.Message = "Your application description page.";
