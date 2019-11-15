@@ -1,44 +1,42 @@
 ﻿@{
     ViewBag.Title = "All Bookings";
 }
-<h2>@ViewBag.Title.</h2>
+<!DOCTYPE html>
 
-<div class="jumbotron">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
 
-    <table class="table">
-        <tr>
-            <th>Booking Id</th>
-            <th>Booking date</th>
-            <th>Email</th>
-            <th>Route</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>@DateTime.Now.Date</td>
-            <td>test@test.com</td>
-            <td>Tunis -> Darfur</td>
-            <td>100 USD</td>
-        </tr>
-        @*@for (var i = 0; i < Model.OrdersThisWeek.Count(); i++)
-            {
-                <tr>
-                    <td>
-                        <input type="hidden" asp-for="OrdersThisWeek[i].OrderId" />
-                        @Model.OrdersThisWeek[i].OrderId
-                    </td>
-                    <td>@Model.OrdersThisWeek[i].Customer</td>
-                    <td>@Model.OrdersThisWeek[i].OrderDate.ToShortDateString()</td>
-                    <td><input asp-for="OrdersThisWeek[i].Dispatched" /></td>
-                </tr>
-            }*@
-    </table>
+    <div class="jumbotron">
 
-</div>
+        <table class="table" style="position:absolute; left:20px; padding-right:50px">
+            <tr>
+                <th>Booking Id</th>
+                <th>Booking date</th>
+                <th>Email</th>
+                <th>Route</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>@DateTime.Now.Date</td>
+                <td>test@test.com</td>
+                <td>Tunis -> Darfur</td>
+                <td>100 USD</td>
+            </tr>
+        </table>
 
-<br />
-<div class="col-md-4">
-    <a class="btn btn-default" href="https://app.powerbi.com/groups/me/reports/52e292f9-813f-40ca-a076-3c2d5e3fb12a/ReportSection3f3ec593ce92c804d8c6">Money stuff!!</a>
-</div>
-<br />
+    </div>
 
+    <br />
+    <div class="col-md-4">
+        <a class="btn btn-default" href="https://app.powerbi.com/groups/me/reports/52e292f9-813f-40ca-a076-3c2d5e3fb12a/ReportSection3f3ec593ce92c804d8c6">Money stuff!!</a>
+    </div>
+    <br />
+
+</body>
+</html>

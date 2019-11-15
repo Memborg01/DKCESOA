@@ -1,104 +1,157 @@
-﻿@{
+﻿@using Airport = Models.Airport;
+@{
     ViewBag.Title = "Route Calculator";
 }
 
-<div class="map-image" style="position:absolute; right:5px; top:5px">
-    <img src="https://raw.githubusercontent.com/Memborg01/DKCESOA/master/SolutionAccelerator/Resources/images/map.jpg" class="img-responsive" style="height: 90vh; margin-top: 0px; margin-left:10px; margin-right:5px" />
-</div>
+<!DOCTYPE html>
 
-<div style="max-width:60vw">
-    <h2>Welcome to Oceanic Airlines' Route Calculator</h2>
-</div>
-<br />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+</head>
+<body>
 
-<div class="row">
-    <div class="col-md-4">
-
-        Choose Pickup:
-        <select name="airport">
-            <option value="">Select city</option>
-            <option value="1">Ankara</option>
-            <option value="2">Addis Abeba</option>
-            <option value="3">Darfur</option>
-        </select>
-        <br />
-        <br />
-
-        Choose Destination:
-        <select name="airport">
-            <option value="">Select city</option>
-            <option value="1">Ankara</option>
-            <option value="2">Addis Abeba</option>
-            <option value="3">Darfur</option>
-        </select>
-        <br />
-        <br />
-
-        Choose Package type:
-        <select name="packageType">
-            <option value="">Package type</option>
-            <option value="1">Standard</option>
-            <option value="2">Weapons</option>
-            <option value="3">Live Animals</option>
-            <option value="4">Fragile</option>
-            <option value="5">Frozen</option>
-            <option value="6">Recommended</option>
-        </select>
-        <br />
-        <br />
-
+    <div class="map-image" style="position:absolute; right:5px; top:5px">
+        <img src="https://raw.githubusercontent.com/Memborg01/DKCESOA/master/SolutionAccelerator/Resources/images/map.jpg" class="img-responsive" style="height: 90vh; margin-top: 0px; margin-left:10px; margin-right:5px" />
     </div>
 
-    <div class="col-md-4">
-        <a class="btn btn-default" style="position:absolute; right:100px"
-           href="https://www.google.com/search?q=calculator&rlz=1C1GCEU_daDK843DK843&oq=calculator&aqs=chrome..69i57j0l5j69i61j69i60.3638j0j4&sourceid=chrome&ie=UTF-8">
-            Calculate Route
-        </a>
+    <div style="max-width:60vw">
+        <h2>Welcome to Oceanic Airlines' Route Calculator</h2>
     </div>
-
-
     <br />
-</div>
 
-<div class="row" style="margin-right:20px">
-    <div class="col-md-4">
-        Set Weight:
-        <form method="post">
-            <input type="text" name="weight" value="" /> kg
-            @*<input type="submit" value="Select" >*@
-        </form>
+    <div class="row">
+        <div class="col-md-4">
+
+            Choose Pickup:
+            <select name="airport">
+                <option value="">Select city</option>
+
+                @{
+                    List<Airport> Airports = ViewBag.Airports;
+
+                    foreach (var airport in Airports)
+                    {
+                        <option value="airport.AirportId">@airport.Name</option>
+                    }
+                }
+            </select>
+            <br />
+            <br />
+
+            Choose Destination:
+            <select name="airport">
+                <option value="">Select city</option>
+                @{
+                    foreach (var airport in Airports)
+                    {
+                        <option value="airport.AirportId">@airport.Name</option>
+                    }
+                }
+            </select>
+            <br />
+            <br />
+
+            Choose Package type:
+            <select name="packageType">
+
+                <option value="">Package type</option>
+                <option value="1">Standard</option>
+                <option value="2">Weapons</option>
+                <option value="3">Live Animals</option>
+                <option value="4">Fragile</option>
+                <option value="5">Frozen</option>
+                <option value="6">Recommended</option>
+            </select>
+            <br />
+            <br />
+
+        </div>
+
+        <div class="col-md-4">
+            <a class="btn btn-default" style="position:absolute; right:100px"
+               href="https://www.google.com/search?q=calculator&rlz=1C1GCEU_daDK843DK843&oq=calculator&aqs=chrome..69i57j0l5j69i61j69i60.3638j0j4&sourceid=chrome&ie=UTF-8">
+                Calculate Route
+            </a>
+        </div>
+
+
         <br />
     </div>
 
-    <div class="col-md-4" style="margin-right:20px">
-        Set Height:
-        <form method="post">
-            <input type="text" id="height" name="height" value="" /> cm
-        </form>
-        <br />
+    <div class="row" style="margin-right:20px">
+        <div class="col-md-4">
+            Set Weight:
+            <form method="post">
+                <input type="text" name="weight" value="" /> kg
+                @*<input type="submit" value="Select" >*@
+            </form>
+            <br />
+        </div>
+
+        <div class="col-md-4" style="margin-right:20px">
+            Set Height:
+            <form method="post">
+                <input type="text" id="height" name="height" value="" /> cm
+            </form>
+            <br />
+        </div>
+
+        <div class="col-md-4">
+            Set Width:
+            <form method="post">
+                <input type="text" id="width" name="width" value="" /> cm
+            </form>
+            <br />
+        </div>
+
+        <div class="col-md-4">
+            Set Depth:
+            <form method="post">
+                <input type="text" id="depth" name="depth" value="" /> cm
+            </form>
+            <br />
+        </div>
+
+    </div>
+    @{
+        if (ViewBag.ShowDialog != null && ViewBag.ShowDialog == true)
+        {
+            <script type="text/javascript">
+                $(function () {
+                    $("#aModal").modal('show');
+                })
+            </script>
+        }
+    }
+    @*@using (Html.BeginForm("ShowRouteOptions", "Index"))
+    {
+        <input type="submit" value="submit" />
+    }*@
+    @*modal*@
+    <div class="modal fade" id="aModal" tabindex="-1" role="dialog" aria-labelledby="aModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="aModalLabel">Routes</h4>
+                </div>
+                <div class="modal-body">
+                    This is a good route!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-4">
-        Set Width:
-        <form method="post">
-            <input type="text" id="width" name="width" value="" /> cm
-        </form>
-        <br />
-    </div>
-
-    <div class="col-md-4">
-        Set Depth:
-        <form method="post">
-            <input type="text" id="depth" name="depth" value="" /> cm
-        </form>
-        <br />
-    </div>
-
-</div>
-
-
+</body>
+</html>
 
 @*<form method="post">
         <input type="text" id="EmailAddress" name="EmailAddress" value="" />
-    </form>*@
+</form>*@

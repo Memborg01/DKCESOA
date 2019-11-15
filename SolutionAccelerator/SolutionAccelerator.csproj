@@ -173,6 +173,7 @@
     </Compile>
     <Compile Include="Models\APIModel.cs" />
     <Compile Include="Models\APIResponse.cs" />
+    <Compile Include="Models\PacketTypeEnum.cs" />
     <Compile Include="Models\RouteTypeEnum.cs" />
     <Compile Include="Models\TransportationModeEnum.cs" />
     <Compile Include="Models\Path.cs" />
